@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import useSound from 'use-sound';
+import watersound from "./watersound.mp3";
+import {Howl, Howler} from "howler";
+import {Routes, Route, Link} from "react-router-dom";
+import {Description} from "./pages";
 
 //   var playing = false;
 
@@ -22,16 +27,34 @@ import './App.css';
 // }
 // }
 
+// const audio = new Audio("https://sverigesradio.se/topsy/direkt/srapi/5283.mp3");
+// audio.play()
+// console.log("audio", audio);
+
+
+
 function Audio({channel}){
+  // const ping = "https://sverigesradio.se/topsy/direkt/srapi/5283.mp3";
+  // const [play] = useSound(watersound);
+  const source = [channel.liveaudio.url];
+  function playSound() {
+    var stream = new Howl({
+      src: [source],
+      ext: ['mp3'],
+      autoplay: true,
+      html5: true
+    });
+  stream.play()
+  }
+  return source.map((sound) => {
+    return(
+      <>
+        <button onClick={playSound()}>{channel.id}</button>
+        {/* <audio src={channel.liveaudio.url}></audio> */}
+      </>
+  )})
   
-const audio = new Audio("https://sverigesradio.se/topsy/direkt/srapi/5283.mp3");
-audio.play()
-console.log("audio", audio);
-  return(
-    <>
-      {/* <audio src={channel.liveaudio.url}></audio> */}
-    </>
-  )
+  
 }
 
 
@@ -77,8 +100,9 @@ function Fetch(){
 
     return (
       <>
+        
         <ul>
-          {data.channels.map((channel) =><li><Channel channel={channel}/></li>)}
+          {data.channels.map((channel) =><li key={channel.id}><Channel channel={channel}/><Link to={`/channel/${channel.id}`}>{channel.name}</Link></li>)}
         </ul>
       </>
   );
@@ -89,10 +113,14 @@ function Fetch(){
 
 
 
-function App() {
+function App({channel}) {
   return (
     <div className='App'>
-      <Fetch/>
+      <Routes>
+        <Route path="/" element={<Fetch />}/>
+        <Route path="/channel/:id" element={<Description channel={channel}/>}/>
+      </Routes>
+      
     </div>
   )
 }
