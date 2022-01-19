@@ -11,8 +11,8 @@ function Channel({channel}){
     <>
     <br></br><br></br><br></br>
       <h2>{channel.name}</h2>
-      <img src={channel.image} alt="alt"></img>
-      <audio controls={true} allow="autoplay"><source src={channel.liveaudio.url}  type="audio/mpeg"></source></audio>
+      <img className="images" src={channel.image} alt="alt"></img>
+      <audio className="audio" controls={true} allow="autoplay"><source src={channel.liveaudio.url}  type="audio/mpeg"></source></audio>
     </>
   )
 
@@ -25,10 +25,10 @@ function Fetch({data}){
   console.log("data ", data)
     return (
       <>
-      <Link to="extra">Extra</Link>
-        <ul>
-          {data.channels.map((channel) =><li key={channel.id}><Channel 
-           channel={channel}/><Link to={`/channel/${channel.id}`}>{channel.name}</Link></li>)}
+      <Link className="extralink" to="extra">Extra</Link>
+        <ul className="ul">
+          {data.channels.map((channel) =><li className="name" key={channel.id}><Channel 
+           channel={channel}/><Link className="links" to={`/channel/${channel.id}`}>Description of the channel: {channel.name}</Link></li>)}
         </ul>
       </>
   );
