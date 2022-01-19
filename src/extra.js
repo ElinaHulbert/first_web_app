@@ -10,7 +10,7 @@ export function Extra(){
 
 
  function getData(){ 
-   fetch ('http://api.sr.se/api/v2/extra/broadcasts?format=json&indent=true&pagination=false')
+   fetch ('https://api.sr.se/api/v2/extra/broadcasts?format=json&indent=true&pagination=false')
     .then (response => response.json())
     .then (setData)
     .catch (setError);
