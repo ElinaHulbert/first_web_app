@@ -63,8 +63,8 @@ if (!data) return null;
     <div className='App'>
       <Routes>
         <Route path="/" element={<Fetch data={data}/>}/>
-        <Route path="/#/channel/#/:id" element={<Description data={data}/>}/>
-        <Route path="/#/extra" element={<Extra/>}/>
+        <Route path="/channel/:id" element={<Description data={data}/>}/>
+        <Route path="/extra" element={<Extra/>}/>
       </Routes>
       
     </div>
