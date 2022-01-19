@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Routes, Route, Link} from "react-router-dom";
-import {Description} from "./pages";
+import {Description} from "./descriptions";
+import {Extra} from "./extra";
 
 
 
@@ -24,6 +25,7 @@ function Fetch({data}){
   console.log("data ", data)
     return (
       <>
+      <Link to="extra">Extra</Link>
         <ul>
           {data.channels.map((channel) =><li key={channel.id}><Channel 
            channel={channel}/><Link to={`/channel/${channel.id}`}>{channel.name}</Link></li>)}
@@ -62,6 +64,7 @@ if (!data) return null;
       <Routes>
         <Route path="/" element={<Fetch data={data}/>}/>
         <Route path="/channel/:id" element={<Description data={data}/>}/>
+        <Route path="/extra" element={<Extra/>}/>
       </Routes>
       
     </div>
