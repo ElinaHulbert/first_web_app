@@ -50,7 +50,7 @@ function App() {
 
 
  function getData(){ 
-   fetch ('https://api.sr.se/api/v2/channels?format=json&indent=true&pagination=false')
+   fetch ('http://api.sr.se/api/v2/channels?format=json&indent=true&pagination=false')
     .then (response => response.json())
     .then (setData)
     .catch (setError);
