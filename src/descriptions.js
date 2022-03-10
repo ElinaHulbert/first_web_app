@@ -13,7 +13,7 @@ export function Description({ data }) {
 function Tagline({ data }) {
   let href = document.location.href;
   let result = href.slice(30).toString();
-  console.log("data", data);
+  console.log("result ", result);
   return data.channels.map((channel) => {
     console.log(channel.id);
     console.log("result length:", result.length, " result is:", result);
