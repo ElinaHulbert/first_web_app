@@ -11,8 +11,8 @@ export function Description({ data }) {
 }
 
 function Tagline({ data }) {
-  let href = document.location.href;
-  let result = href.slice(30).toString();
+  let href = document.location.href.split("/");
+  let result = href[href.length - 1];
   console.log("result ", result);
   return data.channels.map((channel) => {
     console.log(channel.id);
