@@ -9,10 +9,28 @@ import {Extra} from "./extra";
 function Channel({channel}){
   return(
     <>
+<div class="container-02">
+		
+		<div class="glassmorphic-card">
+			<div class="imgBox">
+        <img className="images" src={channel.image} alt="alt"></img>
+			</div>
+			<div class="contentBox">
+        <h2>{channel.name}</h2>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ...</p>
+        <audio className="audio" controls={true} allow="autoplay"><source src={channel.liveaudio.url}  type="audio/mpeg"></source></audio>s
+			</div>
+		</div>
+		
+</div>
+
+
+
+
     <br></br><br></br><br></br>
-      <h2>{channel.name}</h2>
-      <img className="images" src={channel.image} alt="alt"></img>
-      <audio className="audio" controls={true} allow="autoplay"><source src={channel.liveaudio.url}  type="audio/mpeg"></source></audio>
+     
+      
+      
     </>
   )
 

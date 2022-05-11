@@ -45,7 +45,7 @@ function Channel({broadcast}){
     <>
     <br></br><br></br><br></br>
       <h2>{broadcast.name}</h2>
-      <video controls={true} allow="autoplay"><source src={broadcast.liveaudio.url}  type="video/rtmp"></source></video>
+      <audio controls={true} allow="autoplay"><source src={broadcast.liveaudio.url}  type="audio/rtmp"></source></audio>
     </>
   )
 
