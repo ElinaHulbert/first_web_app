@@ -182,12 +182,22 @@ audio::-webkit-media-controls-panel {
 		padding: 40px 50px; 
 	}
 }
+@media screen and (max-width: 450px) {
+	
+	.container-02:after {
+		transform: rotate(0deg);
+		padding: 0;
+		margin:0;
+		width: inherit;
+		height: inherit;
+	}
+
+}
 
 @media screen and (max-width: 400px) {
 	
 	.container-02 .glassmorphic-card {
 		width: 200px;
 	}
-
 }
 

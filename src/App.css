@@ -58,12 +58,23 @@
 @media screen and (max-width:500px) {
   .list{
     width: 430px;
-    margin: 0 0 40px 0;
+    margin: 0 0 60px 0;
+}
+}
+@media screen and (max-width:450px) {
+  .list{
+    width: 420px;
+}
+.contentBox{
+  width: 400px;
 }
 }
 @media screen and (max-width:400px) {
+  .ul{
+    width: 370px;
+  }
   .list{
-    width: 400px;
+   width: inherit;
 }
 .contentBox{
   width: 400px;
