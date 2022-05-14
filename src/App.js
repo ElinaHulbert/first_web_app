@@ -18,6 +18,7 @@ function Channel({ channel }) {
             <p>{channel.tagline}</p>
             <audio className="audio" controls={true} allow="autoplay">
               <source src={channel.liveaudio.url} type="audio/mpeg"></source>
+              {console.log(channel.liveaudio.url, "source")}
             </audio>
             <Link className="links" to={`/channel/${channel.id}`}>
               Description: {channel.name}
@@ -37,7 +38,6 @@ function Fetch({ data }) {
   console.log("data ", data);
   return (
     <>
-      <Header></Header>
       <ul className="ul">
         {data.channels.map((channel) => (
           <li className="list" key={channel.id}>
@@ -73,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Fetch data={data} />} />
         <Route path="/channel/:id" element={<Description data={data} />} />

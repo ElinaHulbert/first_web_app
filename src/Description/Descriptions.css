@@ -1,0 +1,29 @@
+body {
+    background: rgb(176,224,236);
+    background: linear-gradient(90deg, rgba(176,224,236,.6) 0%, rgba(165,193,214,.6) 23%, rgba(202,213,242,.6) 52%, rgba(199,201,235,.6) 76%, rgba(146,154,203,.6) 95%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+    height: 40vh;
+    margin: 20px 15px 0;
+    padding: 0 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+	border-radius: 15px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	border-left: 1px solid rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.1);
+	backdrop-filter: blur(5px);
+	overflow: hidden;
+    text-align: center;
+}
+
+.site_link{
+    color: #3F2B96;
+}
