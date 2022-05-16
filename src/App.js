@@ -6,6 +6,11 @@ import { Extra } from "./Extra/extra";
 import Header from "./Header/Header";
 
 function Channel({ channel }) {
+  let source = channel.liveaudio.url;
+  useEffect(() => {
+    storeSource();
+  }, [source]);
+  function storeSource() {}
   return (
     <>
       <div className="container-02">
@@ -17,8 +22,8 @@ function Channel({ channel }) {
             <h2>{channel.name}</h2>
             <p>{channel.tagline}</p>
             <audio className="audio" controls={true} allow="autoplay">
-              <source src={channel.liveaudio.url} type="audio/mpeg"></source>
-              {console.log(channel.liveaudio.url, "source")}
+              <source src={source} type="audio/mpeg"></source>
+              {console.log(source, "source")}
             </audio>
             <Link className="links" to={`/channel/${channel.id}`}>
               Description: {channel.name}
